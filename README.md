@@ -1,6 +1,6 @@
-# Smart Subscription Manager
+# Subscription Manager
 
-Smart Subscription Manager is a fullstack web application for tracking paid subscriptions, viewing monthly and yearly spending, checking upcoming renewals, and finding potential savings from unused subscriptions.
+Subscription Manager is a fullstack web application for tracking paid subscriptions, viewing monthly and yearly spending, checking upcoming renewals, and finding potential savings from unused subscriptions.
 
 ## Features
 
@@ -177,5 +177,5 @@ Backend:  http://localhost:5000/api
 ## Deployment
 
 ```txt
-Deployed link: Not deployed yet
+Deployed link: https://subscriptionmanager.xyz
 ```
