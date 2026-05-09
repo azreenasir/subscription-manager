@@ -137,7 +137,7 @@ function EditSubscription() {
 
         <label className="checkbox-label">
           <input name="isUsed" type="checkbox" checked={form.isUsed} onChange={handleChange} />
-          Is used
+          Used
         </label>
 
         <button type="submit" disabled={saving}>

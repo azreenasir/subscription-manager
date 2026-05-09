@@ -1,6 +1,7 @@
 const express = require("express");
 const {
   getSubscriptions,
+  getSubscriptionById,
   createSubscription,
   updateSubscription,
   deleteSubscription,
@@ -14,6 +15,6 @@ router.use(protect);
 
 router.get("/insights", getSubscriptionInsights);
 router.route("/").get(getSubscriptions).post(createSubscription);
-router.route("/:id").put(updateSubscription).delete(deleteSubscription);
+router.route("/:id").get(getSubscriptionById).put(updateSubscription).delete(deleteSubscription);
 
 module.exports = router;

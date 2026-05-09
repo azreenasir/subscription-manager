@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ message: "Smart Subscription Manager API is running" });
+  res.json({ message: "Subscription Manager API is running" });
 });
 
 app.use("/api/auth", authRoutes);

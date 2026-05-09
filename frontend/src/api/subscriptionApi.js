@@ -20,8 +20,11 @@ export const getSubscriptions = async (params = {}) => {
 };
 
 export const getSubscriptionById = async (id) => {
-  const subscriptions = await getSubscriptions();
-  return subscriptions.find((subscription) => subscription._id === id);
+  const response = await axios.get(`${API_BASE_URL}/subscriptions/${id}`, {
+    headers: getAuthHeaders(),
+  });
+
+  return response.data;
 };
 
 export const createSubscription = async (data) => {

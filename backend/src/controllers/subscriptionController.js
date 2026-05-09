@@ -73,6 +73,31 @@ const getSubscriptions = async (req, res, next) => {
   }
 };
 
+const getSubscriptionById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      res.status(400);
+      throw new Error("Invalid ID");
+    }
+
+    const subscription = await Subscription.findOne({
+      _id: id,
+      userId: req.user._id,
+    });
+
+    if (!subscription) {
+      res.status(404);
+      throw new Error("Subscription not found");
+    }
+
+    res.json(subscription);
+  } catch (error) {
+    next(error);
+  }
+};
+
 const createSubscription = async (req, res, next) => {
   try {
     const { name, price, billingCycle, category, nextBillingDate, isUsed } = req.body;
@@ -183,6 +208,7 @@ const getSubscriptionInsights = async (req, res, next) => {
 
 module.exports = {
   getSubscriptions,
+  getSubscriptionById,
   createSubscription,
   updateSubscription,
   deleteSubscription,
